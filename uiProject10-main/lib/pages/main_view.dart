@@ -1,3 +1,5 @@
+// lib/pages/main_view.dart
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../model/imat_data_handler.dart';
@@ -8,7 +10,8 @@ import '../widgets/product_tile.dart';
 import '../widgets/cart_view.dart';
 import '../app_theme.dart';
 
-
+// ← import your ShoppingCartView
+import 'shopping_cart_view.dart';
 
 class MainView extends StatelessWidget {
   const MainView({Key? key}) : super(key: key);
@@ -35,16 +38,14 @@ class MainView extends StatelessWidget {
                 // Center panel: filter + responsive grid
                 Expanded(
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,  // allow children to fill
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       // FilterBar now takes full width
                       SizedBox(
                         width: double.infinity,
                         child: const FilterBar(),
                       ),
-
                       const SizedBox(height: 8),
-
                       // Product grid
                       Expanded(
                         child: Container(
@@ -70,7 +71,8 @@ class MainView extends StatelessWidget {
 
                 // Right panel (cart)
                 Padding(
-                  padding: const EdgeInsets.only(left: 12.0, top: 8.0, right: 8.0),
+                  padding:
+                  const EdgeInsets.only(left: 12.0, top: 8.0, right: 8.0),
                   child: Container(
                     width: 300,
                     decoration: BoxDecoration(
@@ -83,10 +85,13 @@ class MainView extends StatelessWidget {
                       children: [
                         const Text(
                           'Kundvagn',
-                          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(height: AppTheme.paddingMedium),
-                        const Expanded(child: CartView())
+                        const Expanded(child: CartView()),
+
+                        const SizedBox(height: AppTheme.paddingMedium),
                       ],
                     ),
                   ),

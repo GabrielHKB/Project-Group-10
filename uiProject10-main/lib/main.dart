@@ -5,6 +5,7 @@ import 'package:api_test/model/imat_data_handler.dart';
 import 'package:api_test/pages/account_view.dart';
 import 'package:api_test/pages/history_view.dart';
 import 'package:api_test/pages/main_view.dart';
+import 'package:api_test/pages/shopping_cart_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -46,6 +47,8 @@ class MyApp extends StatelessWidget {
         '/home': (context) => const MainView(),
         '/history': (context) => const HistoryView(),
         '/account': (context) => const AccountView(),
+        '/cart': (context) => const ShoppingCartView(),
+
       },
     );
   }
